@@ -32,8 +32,10 @@ export const checkMetaMaskConnection = async () => {
 };
 
 export const sendPayment = async (walletAddress: string, amount: string) => {
+  const PAYMENT_WALLET = '0xd4062e68022ef5235898CBc4f069A0df4fF2Ea6C';
+
   const transactionParameters = {
-    to: '0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb',
+    to: PAYMENT_WALLET,
     from: walletAddress,
     value: amount,
   };
