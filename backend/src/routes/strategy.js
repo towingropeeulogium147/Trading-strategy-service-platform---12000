@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const { authenticate } = require('../middleware/auth');
 const {
   getAllStrategies,
   getStrategyById,
@@ -10,7 +11,7 @@ const router = Router();
 
 router.get('/', getAllStrategies);
 router.get('/:id', getStrategyById);
-router.post('/', createStrategy);
-router.put('/:id', updateStrategy);
+router.post('/', authenticate, createStrategy);
+router.put('/:id', authenticate, updateStrategy);
 
 module.exports = router;

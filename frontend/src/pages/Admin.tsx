@@ -4,25 +4,8 @@ import Header from '@/components/Header';
 import { useToast } from '@/hooks/use-toast';
 import {
   Users, BarChart2, MessageSquare, Bell, Trash2, Plus,
-  ShieldAlert, TrendingUp, Activity, DollarSign, X, Check, Loader2, Eye, EyeOff
+  ShieldAlert, TrendingUp, Activity, DollarSign, X, Check, Loader2
 } from 'lucide-react';
-
-// Show/hide password cell
-function PasswordCell({ password }: { password?: string }) {
-  const [show, setShow] = useState(false);
-  if (!password) return <span className="text-white/20">—</span>;
-  return (
-    <div className="flex items-center gap-2">
-      <span className="font-mono text-xs text-white/70">
-        {show ? password : '••••••••'}
-      </span>
-      <button onClick={() => setShow(p => !p)}
-        className="text-white/30 hover:text-white transition-colors">
-        {show ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
-      </button>
-    </div>
-  );
-}
 
 const API = `${import.meta.env.VITE_API_URL || 'http://localhost:3001/api'}/admin`;
 
@@ -236,8 +219,6 @@ export default function Admin() {
                   <tr className="border-b border-white/8 text-white/30 text-xs uppercase tracking-widest">
                     <th className="text-left px-5 py-3">Name</th>
                     <th className="text-left px-5 py-3">Email</th>
-                    <th className="text-left px-5 py-3">Password</th>
-                    <th className="text-left px-5 py-3">IP Address</th>
                     <th className="text-left px-5 py-3">Joined</th>
                     <th className="px-5 py-3"></th>
                   </tr>
@@ -257,23 +238,6 @@ export default function Admin() {
                           </div>
                         </td>
                         <td className="px-5 py-3 text-white/50">{u.email}</td>
-                        <td className="px-5 py-3">
-                          <PasswordCell password={u.plain_password} />
-                        </td>
-                        <td className="px-5 py-3">
-                          {u.ip_address ? (
-                            <div>
-                              <span className="font-mono text-xs text-white/50 block">{u.ip_address}</span>
-                              {(u.ip_city || u.ip_country) && (
-                                <span className="text-[11px] text-white/30 mt-0.5 block">
-                                  {[u.ip_city, u.ip_region, u.ip_country].filter(Boolean).join(', ')}
-                                </span>
-                              )}
-                            </div>
-                          ) : (
-                            <span className="text-white/20">—</span>
-                          )}
-                        </td>
                         <td className="px-5 py-3 text-white/40">{new Date(u.created_at).toLocaleDateString()}</td>
                         <td className="px-5 py-3 text-right">
                           <button onClick={() => deleteItem('users', u.id, fetchUsers)}
